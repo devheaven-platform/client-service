@@ -18,8 +18,8 @@ const create = ( body ) => {
         errors.name = "Name must be a string";
     } else if ( body.name.trim() === "" ) {
         errors.name = "Name cannot be a empty string";
-    } else if ( !validator.isLength( body.name, { min: 2, max: 20 } ) ) {
-        errors.name = "Name must be between 2 and 20 characters";
+    } else if ( !validator.isLength( body.name, { min: 2, max: 40 } ) ) {
+        errors.name = "Name must be between 2 and 40 characters";
     }
 
     if ( body.description ) {
@@ -93,8 +93,8 @@ const update = ( body ) => {
             errors.name = "Name must be a string";
         } else if ( body.name.trim() === "" ) {
             errors.name = "Name cannot be a empty string";
-        } else if ( !validator.isLength( body.name, { min: 2, max: 20 } ) ) {
-            errors.name = "Name must be between 2 and 20 characters";
+        } else if ( !validator.isLength( body.name, { min: 2, max: 40 } ) ) {
+            errors.name = "Name must be between 2 and 40 characters";
         }
     }
 

@@ -46,7 +46,7 @@ const Client = new mongoose.Schema( {
         type: String,
     },
     contact: {
-        type: Object,
+        type: String,
         ref: "Contact",
     },
     logo: {

@@ -10,7 +10,7 @@ describe( "ClientService", () => {
             const testClient1 = {
                 name: "Company1",
                 description: "Description1",
-                contact: new Contact( {
+                contact: await new Contact( {
                     firstname: "John",
                     lastname: "Doe",
                     mail: "JohnDoe@mail.com",
@@ -21,7 +21,7 @@ describe( "ClientService", () => {
             const testClient2 = {
                 name: "Company2",
                 description: "Description2",
-                contact: new Contact( {
+                contact: await new Contact( {
                     firstname: "John2",
                     lastname: "Doe",
                     mail: "JohnDoe@mail.com",
@@ -50,7 +50,7 @@ describe( "ClientService", () => {
             const testClient1 = {
                 name: "Company1",
                 description: "Doe",
-                contact: new Contact( {
+                contact: await new Contact( {
                     firstname: "John",
                     lastname: "Doe",
                     mail: "JohnDoe@mail.com",
@@ -89,7 +89,7 @@ describe( "ClientService", () => {
             };
 
             const client = await ClientService.createClient( testClient1 );
-            console.log( client );
+
             expect( client.name ).to.equal( testClient1.name );
             expect( client.contact.firstname ).to.equal( testClient1.contact.firstname );
             should().exist( client.id );
@@ -102,7 +102,7 @@ describe( "ClientService", () => {
             const testClient1 = {
                 name: "Company1",
                 description: "Doe",
-                contact: new Contact( {
+                contact: await new Contact( {
                     firstname: "John",
                     lastname: "Doe",
                     mail: "JohnDoe@mail.com",
@@ -130,7 +130,7 @@ describe( "ClientService", () => {
             const testClient1 = {
                 name: "Company1",
                 description: "Doe",
-                contact: new Contact( {
+                contact: await new Contact( {
                     firstname: "John",
                     lastname: "Doe",
                     mail: "JohnDoe@mail.com",

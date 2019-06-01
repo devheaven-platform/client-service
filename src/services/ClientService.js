@@ -37,7 +37,14 @@ const createClient = async ( newClient ) => {
  * @param {Object} client the client with the updated values
  * @returns the updated client
  */
-const updateClient = async ( id, client ) => Client.findOneAndUpdate( { _id: id }, client, { new: true } ).exec();
+const updateClient = async ( id, data ) => {
+    const client = data;
+
+    const { contact } = await Client.findOne( { _id: id } ).exec();
+    await Contact.findOneAndUpdate( { _id: contact }, client.contact, { new: true } ).exec();
+    delete client.contact;
+    return Client.findOneAndUpdate( { _id: id }, client, { new: true } ).populate( { path: "contact" } ).exec();
+};
 
 /**
  * Removes a client from the database
