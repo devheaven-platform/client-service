@@ -13,7 +13,7 @@ describe( "ClientService", () => {
                 contact: await new Contact( {
                     firstname: "John",
                     lastname: "Doe",
-                    mail: "JohnDoe@mail.com",
+                    email: "JohnDoe@email.com",
                     phoneNumber: "0643724597",
                 } ).save(),
                 logo: "https://logo.com/logo.png",
@@ -24,7 +24,7 @@ describe( "ClientService", () => {
                 contact: await new Contact( {
                     firstname: "John2",
                     lastname: "Doe",
-                    mail: "JohnDoe@mail.com",
+                    email: "JohnDoe@email.com",
                     phoneNumber: "0643724597",
                 } ).save(),
                 logo: "https://logo.com/logo.png",
@@ -53,7 +53,7 @@ describe( "ClientService", () => {
                 contact: await new Contact( {
                     firstname: "John",
                     lastname: "Doe",
-                    mail: "JohnDoe@mail.com",
+                    email: "JohnDoe@email.com",
                     phoneNumber: "0643724597",
                 } ).save(),
                 logo: "https://logo.com/logo.png",
@@ -82,7 +82,7 @@ describe( "ClientService", () => {
                 contact: {
                     firstname: "John",
                     lastname: "Doe",
-                    mail: "JohnDoe@mail.com",
+                    email: "JohnDoe@email.com",
                     phoneNumber: "0643724597",
                 },
                 logo: "https://logo.com/logo.png",
@@ -105,7 +105,7 @@ describe( "ClientService", () => {
                 contact: await new Contact( {
                     firstname: "John",
                     lastname: "Doe",
-                    mail: "JohnDoe@mail.com",
+                    email: "JohnDoe@email.com",
                     phoneNumber: "0643724597",
                 } ).save(),
                 logo: "https://logo.com/logo.png",
@@ -133,7 +133,7 @@ describe( "ClientService", () => {
                 contact: await new Contact( {
                     firstname: "John",
                     lastname: "Doe",
-                    mail: "JohnDoe@mail.com",
+                    email: "JohnDoe@email.com",
                     phoneNumber: "0643724597",
                 } ).save(),
                 logo: "https://logo.com/logo.png",

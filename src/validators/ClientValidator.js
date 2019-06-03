@@ -56,9 +56,9 @@ const create = ( body ) => {
         }
 
         if ( !body.contact.email ) {
-            errors.email = "Mail is required";
+            errors.email = "Email is required";
         } else if ( !validator.isEmail( body.contact.email ) ) {
-            errors.email = "Mail must be of type email";
+            errors.email = "Email must be of type email";
         }
 
         if ( body.contact.phoneNumber && !validator.isMobilePhone( body.contact.phoneNumber ) ) {
@@ -131,7 +131,7 @@ const update = ( body ) => {
 
         if ( body.contact.email ) {
             if ( !validator.isEmail( body.contact.email ) ) {
-                errors.email = "Mail must be of type email";
+                errors.email = "Email must be of type email";
             }
         }
 

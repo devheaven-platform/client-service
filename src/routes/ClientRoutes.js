@@ -169,8 +169,8 @@ router.get( "/:id", asyncMiddleware( controller.getClientById ) );
  *                                      example: Doe
  *                                  email:
  *                                      type: string
- *                                      description: the mail of the contact
- *                                      example: JohnDoe@mail.com
+ *                                      description: the email of the contact
+ *                                      example: JohnDoe@email.com
  *                                  phoneNumber:
  *                                      type: string
  *                                      description: the phone number of the contact
@@ -246,8 +246,8 @@ router.post( "/", asyncMiddleware( controller.createClient ) );
  *                                      example: Doe
  *                                  email:
  *                                      type: string
- *                                      description: the mail of the contact
- *                                      example: JohnDoe@mail.com
+ *                                      description: the email of the contact
+ *                                      example: JohnDoe@email.com
  *                                  phoneNumber:
  *                                      type: string
  *                                      description: the phone number of the contact
