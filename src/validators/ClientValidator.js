@@ -61,7 +61,7 @@ const create = ( body ) => {
             errors.email = "Email must be of type email";
         }
 
-        if ( body.contact.phoneNumber && !validator.isMobilePhone( body.contact.number ) ) {
+        if ( body.contact.phoneNumber && !validator.isMobilePhone( body.contact.phoneNumber ) ) {
             errors.phoneNumber = "Phone must be a valid phone number";
         }
     }
@@ -131,7 +131,11 @@ const update = ( body ) => {
 
         if ( body.contact.email ) {
             if ( !validator.isEmail( body.contact.email ) ) {
+<<<<<<< HEAD
                 errors.email = "Email must be of type email";
+=======
+                errors.email = "Mail must be of type email";
+>>>>>>> origin
             }
         }
 

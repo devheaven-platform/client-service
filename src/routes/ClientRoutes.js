@@ -6,7 +6,7 @@ const controller = require( "../controllers/ClientController" );
 /**
  * @swagger
  * tags:
- *  - name: Client
+ *  - name: Clients
  *    description: All client related routes
  */
 const router = express.Router();
@@ -26,13 +26,45 @@ const router = express.Router();
  *                      schema:
  *                          type: array
  *                          items:
- *                              $ref: '#/components/schemas/Client'
+ *                              type:
+ *                              properties:
+ *                                  name:
+ *                                      type: string
+ *                                      description: the name of the client
+ *                                      example: John's website design
+ *                                  description:
+ *                                      type: string
+ *                                      description: the description of the client
+ *                                      example: IT company that makes simple websites
+ *                                  contact:
+ *                                      type: object
+ *                                      properties:
+ *                                          firstname:
+ *                                              type: string
+ *                                              description: the firstname of the contact
+ *                                              example: John
+ *                                          lastname:
+ *                                              type: string
+ *                                              description: the lastname of the contact
+ *                                              example: Doe
+ *                                          email:
+ *                                              type: string
+ *                                              description: the mail of the contact
+ *                                              example: JohnDoe@mail.com
+ *                                          phoneNumber:
+ *                                              type: string
+ *                                              description: the phone number of the contact
+ *                                              example: 0643724597
+ *                                  logo:
+ *                                      type: string
+ *                                      description: the logo of the client
+ *                                      example: https://mylogo.nl/logo.png
  *          '401':
  *              $ref: '#/components/responses/Unauthorized'
  *          '500':
  *              $ref: '#/components/responses/InternalServerError'
  *      tags:
- *          - Client
+ *          - Clients
  */
 router.get( "/", asyncMiddleware( controller.getAllClients ) );
 
@@ -56,7 +88,39 @@ router.get( "/", asyncMiddleware( controller.getAllClients ) );
  *              content:
  *                  application/json:
  *                      schema:
- *                          $ref: '#/components/schemas/Client'
+ *                          type: object
+ *                          properties:
+ *                              name:
+ *                                  type: string
+ *                                  description: the name of the client
+ *                                  example: John's website design
+ *                              description:
+ *                                  type: string
+ *                                  description: the description of the client
+ *                                  example: IT company that makes simple websites
+ *                              contact:
+ *                                  type: object
+ *                                  properties:
+ *                                      firstname:
+ *                                          type: string
+ *                                          description: the firstname of the contact
+ *                                          example: John
+ *                                      lastname:
+ *                                          type: string
+ *                                          description: the lastname of the contact
+ *                                          example: Doe
+ *                                      email:
+ *                                          type: string
+ *                                          description: the mail of the contact
+ *                                          example: JohnDoe@mail.com
+ *                                      phoneNumber:
+ *                                          type: string
+ *                                          description: the phone number of the contact
+ *                                          example: 0643724597
+ *                              logo:
+ *                                  type: string
+ *                                  description: the logo of the client
+ *                                  example: https://mylogo.nl/logo.png
  *          '400':
  *              $ref: '#/components/responses/BadRequest'
  *          '401':
@@ -66,7 +130,7 @@ router.get( "/", asyncMiddleware( controller.getAllClients ) );
  *          '500':
  *              $ref: '#/components/responses/InternalServerError'
  *      tags:
- *          - Client
+ *          - Clients
  */
 router.get( "/:id", asyncMiddleware( controller.getClientById ) );
 
@@ -107,7 +171,7 @@ router.get( "/:id", asyncMiddleware( controller.getClientById ) );
  *                                      type: string
  *                                      description: the email of the contact
  *                                      example: JohnDoe@email.com
- *                                  number:
+ *                                  phoneNumber:
  *                                      type: string
  *                                      description: the phone number of the contact
  *                                      example: 0643724597
@@ -136,7 +200,7 @@ router.get( "/:id", asyncMiddleware( controller.getClientById ) );
  *          '500':
  *              $ref: '#/components/responses/InternalServerError'
  *      tags:
- *          - Client
+ *          - Clients
  */
 router.post( "/", asyncMiddleware( controller.createClient ) );
 
@@ -208,7 +272,7 @@ router.post( "/", asyncMiddleware( controller.createClient ) );
  *          '500':
  *              $ref: '#/components/responses/InternalServerError'
  *      tags:
- *          - Client
+ *          - Clients
  */
 router.patch( "/:id", asyncMiddleware( controller.updateClient ) );
 
@@ -236,7 +300,7 @@ router.patch( "/:id", asyncMiddleware( controller.updateClient ) );
  *          '500':
  *              $ref: '#/components/responses/InternalServerError'
  *      tags:
- *          - Client
+ *          - Clients
  */
 router.delete( "/:id", asyncMiddleware( controller.deleteClient ) );
 

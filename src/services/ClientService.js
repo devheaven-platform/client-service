@@ -6,7 +6,9 @@ const Contact = require( "../models/Contact" );
  *
  * @returns a list of cliets
  */
-const getAllClients = async () => Client.find().exec();
+const getAllClients = async () => Client.find().populate( {
+    path: "contact",
+} ).exec();
 
 /**
  * Returns a single client from the database with the given id
