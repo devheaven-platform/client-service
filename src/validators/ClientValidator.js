@@ -55,13 +55,13 @@ const create = ( body ) => {
             errors.contact.lastname = "Lastname must be between 2 and 20 characters";
         }
 
-        if ( !body.contact.mail ) {
+        if ( !body.contact.email ) {
             errors.email = "Mail is required";
-        } else if ( !validator.isEmail( body.contact.mail ) ) {
+        } else if ( !validator.isEmail( body.contact.email ) ) {
             errors.email = "Mail must be of type email";
         }
 
-        if ( body.contact.phoneNumber && !validator.isMobilePhone( body.contact.number ) ) {
+        if ( body.contact.phoneNumber && !validator.isMobilePhone( body.contact.phoneNumber ) ) {
             errors.phoneNumber = "Phone must be a valid phone number";
         }
     }
@@ -129,8 +129,8 @@ const update = ( body ) => {
             }
         }
 
-        if ( body.contact.mail ) {
-            if ( !validator.isEmail( body.contact.mail ) ) {
+        if ( body.contact.email ) {
+            if ( !validator.isEmail( body.contact.email ) ) {
                 errors.email = "Mail must be of type email";
             }
         }

@@ -32,7 +32,7 @@ const uuid = require( "uuid" );
  *          required:
  *              - firstname
  *              - lastname
- *              - mail
+ *              - email
  */
 
 const Contact = new mongoose.Schema( {
