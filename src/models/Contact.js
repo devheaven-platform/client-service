@@ -21,7 +21,7 @@ const uuid = require( "uuid" );
  *                  type: string
  *                  description: The lastname of the contact
  *                  example: Doe
- *              mail:
+ *              email:
  *                  type: string
  *                  description: The mail of the contact
  *                  example: JohnDoe@mail.com
@@ -48,7 +48,7 @@ const Contact = new mongoose.Schema( {
         type: String,
         required: true,
     },
-    mail: {
+    email: {
         type: String,
     },
     phoneNumber: {
