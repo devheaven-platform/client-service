@@ -131,11 +131,7 @@ const update = ( body ) => {
 
         if ( body.contact.email ) {
             if ( !validator.isEmail( body.contact.email ) ) {
-<<<<<<< HEAD
                 errors.email = "Email must be of type email";
-=======
-                errors.email = "Mail must be of type email";
->>>>>>> origin
             }
         }
 
