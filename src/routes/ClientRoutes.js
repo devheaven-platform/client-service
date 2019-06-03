@@ -14,7 +14,7 @@ const router = express.Router();
 /**
  * @swagger
  * tags:
- * /client/:
+ * /clients/:
  *  get:
  *      operationId: GetAllClients
  *      summary: Returns a list containing all clients
@@ -39,7 +39,7 @@ router.get( "/", asyncMiddleware( controller.getAllClients ) );
 /**
  * @swagger
  * tags:
- * /client/{id}:
+ * /clients/{id}:
  *  get:
  *      operationId: GetClientById
  *      summary: Returns a single client
@@ -73,7 +73,7 @@ router.get( "/:id", asyncMiddleware( controller.getClientById ) );
 /**
  * @swagger
  * tags:
- * /client/:
+ * /clients/:
  *  post:
  *      operationId: CreateClient
  *      summary: Create a client
@@ -143,7 +143,7 @@ router.post( "/", asyncMiddleware( controller.createClient ) );
 /**
  * @swagger
  * tags:
- * /client/{id}:
+ * /clients/{id}:
  *  patch:
  *      operationId: UpdateClient
  *      summary: Update a existing client
@@ -215,7 +215,7 @@ router.patch( "/:id", asyncMiddleware( controller.updateClient ) );
 /**
  * @swagger
  * tags:
- * /client/{id}:
+ * /clients/{id}:
  *  delete:
  *      operationId: DeleteClient
  *      summary: Delete a existing client
