@@ -103,10 +103,10 @@ router.get( "/:id", asyncMiddleware( controller.getClientById ) );
  *                                      type: string
  *                                      description: the lastname of the contact
  *                                      example: Doe
- *                                  mail:
+ *                                  email:
  *                                      type: string
- *                                      description: the mail of the contact
- *                                      example: JohnDoe@mail.com
+ *                                      description: the email of the contact
+ *                                      example: JohnDoe@email.com
  *                                  number:
  *                                      type: string
  *                                      description: the phone number of the contact
@@ -114,7 +114,7 @@ router.get( "/:id", asyncMiddleware( controller.getClientById ) );
  *                              required:
  *                                  - firstname
  *                                  - lastname
- *                                  - mail
+ *                                  - email
  *                          logo:
  *                              type: string
  *                              description: the logo of the client
@@ -180,10 +180,10 @@ router.post( "/", asyncMiddleware( controller.createClient ) );
  *                                      type: string
  *                                      description: the lastname of the contact
  *                                      example: Doe
- *                                  mail:
+ *                                  email:
  *                                      type: string
- *                                      description: the mail of the contact
- *                                      example: JohnDoe@mail.com
+ *                                      description: the email of the contact
+ *                                      example: JohnDoe@email.com
  *                                  phoneNumber:
  *                                      type: string
  *                                      description: the phone number of the contact

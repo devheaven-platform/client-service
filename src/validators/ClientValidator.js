@@ -55,10 +55,10 @@ const create = ( body ) => {
             errors.contact.lastname = "Lastname must be between 2 and 20 characters";
         }
 
-        if ( !body.contact.mail ) {
-            errors.email = "Mail is required";
-        } else if ( !validator.isEmail( body.contact.mail ) ) {
-            errors.email = "Mail must be of type email";
+        if ( !body.contact.email ) {
+            errors.email = "Email is required";
+        } else if ( !validator.isEmail( body.contact.email ) ) {
+            errors.email = "Email must be of type email";
         }
 
         if ( body.contact.phoneNumber && !validator.isMobilePhone( body.contact.number ) ) {
@@ -129,9 +129,9 @@ const update = ( body ) => {
             }
         }
 
-        if ( body.contact.mail ) {
-            if ( !validator.isEmail( body.contact.mail ) ) {
-                errors.email = "Mail must be of type email";
+        if ( body.contact.email ) {
+            if ( !validator.isEmail( body.contact.email ) ) {
+                errors.email = "Email must be of type email";
             }
         }
 
