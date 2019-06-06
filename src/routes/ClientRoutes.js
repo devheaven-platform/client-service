@@ -1,6 +1,7 @@
 const express = require( "express" );
 
 const asyncMiddleware = require( "../config/middleware/Async" );
+const authMiddleware = require( "../config/middleware/Auth" );
 const controller = require( "../controllers/ClientController" );
 
 /**
@@ -63,10 +64,12 @@ const router = express.Router();
  *              $ref: '#/components/responses/Unauthorized'
  *          '500':
  *              $ref: '#/components/responses/InternalServerError'
+ *      security:
+ *        - bearerAuth: []
  *      tags:
  *          - Clients
  */
-router.get( "/", asyncMiddleware( controller.getAllClients ) );
+router.get( "/", authMiddleware, asyncMiddleware( controller.getAllClients ) );
 
 /**
  * @swagger
@@ -129,10 +132,12 @@ router.get( "/", asyncMiddleware( controller.getAllClients ) );
  *              $ref: '#/components/responses/NotFound'
  *          '500':
  *              $ref: '#/components/responses/InternalServerError'
+ *      security:
+ *        - bearerAuth: []
  *      tags:
  *          - Clients
  */
-router.get( "/:id", asyncMiddleware( controller.getClientById ) );
+router.get( "/:id", authMiddleware, asyncMiddleware( controller.getClientById ) );
 
 /**
  * @swagger
@@ -199,10 +204,12 @@ router.get( "/:id", asyncMiddleware( controller.getClientById ) );
  *              $ref: '#/components/responses/Unauthorized'
  *          '500':
  *              $ref: '#/components/responses/InternalServerError'
+ *      security:
+ *        - bearerAuth: []
  *      tags:
  *          - Clients
  */
-router.post( "/", asyncMiddleware( controller.createClient ) );
+router.post( "/", authMiddleware, asyncMiddleware( controller.createClient ) );
 
 /**
  * @swagger
@@ -271,10 +278,12 @@ router.post( "/", asyncMiddleware( controller.createClient ) );
  *              $ref: '#/components/responses/NotFound'
  *          '500':
  *              $ref: '#/components/responses/InternalServerError'
+ *      security:
+ *        - bearerAuth: []
  *      tags:
  *          - Clients
  */
-router.patch( "/:id", asyncMiddleware( controller.updateClient ) );
+router.patch( "/:id", authMiddleware, asyncMiddleware( controller.updateClient ) );
 
 /**
  * @swagger
@@ -299,9 +308,11 @@ router.patch( "/:id", asyncMiddleware( controller.updateClient ) );
  *              $ref: '#/components/responses/NotFound'
  *          '500':
  *              $ref: '#/components/responses/InternalServerError'
+ *      security:
+ *        - bearerAuth: []
  *      tags:
  *          - Clients
  */
-router.delete( "/:id", asyncMiddleware( controller.deleteClient ) );
+router.delete( "/:id", authMiddleware, asyncMiddleware( controller.deleteClient ) );
 
 module.exports = router;
