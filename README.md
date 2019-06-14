@@ -1,4 +1,6 @@
 # Client Service
+[![Build Status](http://drone.devheaven.nl/api/badges/devheaven-platform/client-service/status.svg)](http://drone.devheaven.nl/devheaven-platform/client-service)
+
 This repository contains the client service for the DevHeaven platform.
 
 # Contribution
